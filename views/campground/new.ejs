@@ -1,0 +1,26 @@
+<%- include("../partials/header")%>
+
+
+<div class="container" style="width:30%;">
+<form action ="/camping" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Camp name</label>
+   <input tpye="text" name="campName"  class="form-control" id="exampleInputPassword1" placeholder="Camp Name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Camp image URL</label>
+    <input tpye="text" name="campURL"  class="form-control" id="exampleInputPassword1" placeholder="Camp image URL">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Description</label>
+    <input tpye="text" name="campDesc"  class="form-control" id="exampleInputPassword1" placeholder="description">
+  </div>
+	<div class="form-group">
+  <button type="submit" class="btn btn-primary">Submit</button>
+	</div>
+	<p><a href="/camping">Go Back</a></p>
+</form>
+
+
+
+<%- include("../partials/footer")%>

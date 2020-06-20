@@ -1,0 +1,59 @@
+<%- include("../partials/header")%>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<p class="lead">YelpCamp</p>
+			<ul class="list-group">
+				<li class="list-group-item active">Cras justo odio</li>
+				<li class="list-group-item">Dapibus ac facilisis in</li>
+			    <li class="list-group-item">Morbi leo risus</li>
+			</ul>
+		</div>
+		<div class="col-md-8">
+			    <div class="row">
+					<div class = "thumbnail col-md-12">
+						<img src="<%= camp.image %>">
+						<div class="caption">
+							<a><strong><%= camp.Campname %></strong></a>
+							<strong><span class="pull-right">$10.0/hr</span></strong>
+							<p><%= camp.description %></p>
+							<em><p>Created By - <%= camp.author.username %></p></em>
+							<% if(currUser && camp.author.id == currUser.id) { %>
+								<a class="btn btn btn-warning" href="/campground/<%= camp._id %>/edit">Edit</a>
+								<form class="delete-form" action="/campground/<%= camp._id %>?_method=DELETE" method="POST">
+									<button class="btn btn btn-danger" >Delete</button>
+								</form>
+							<% } %>
+						<div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div class="row">
+			<div class="col-md-4"></div>  
+					<div class="col-md-8 special">
+						<div class="well">
+						<p><a href="/campground/<%= camp._id %>/comment/new" class="btn btn-success pull-right">Add New 							Comment</a></p>
+							<hr>
+							<% camp.comments.forEach(function(comment){ %>
+							<div class="row">
+								<div class="col-md-12">
+									<b><%= comment.author.username %></b><span class = "pull-right">10 days ago</span>
+									<p><%= comment.Text %></p>
+								</div>
+							</div>
+								<% if(currUser && comment.author.id == currUser.id) { %>
+									<a class="btn btn-xs btn-warning" href="/campground/<%= camp._id %>/comment/<%= comment._id
+									%>/edit">Edit</a>
+									<form class= "delete-form" action="/campground/<%= camp._id %>/comment/<%= comment._id 
+									%>?_method=DELETE" method="POST">
+										<button class="btn btn-xs btn-danger">Delete</button>
+									</form>
+								<% } %>
+							<% }) %>						
+						</div>
+					</div>
+				</div>	
+<div>
+<%- include("../partials/footer")%>
