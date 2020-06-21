@@ -15,7 +15,8 @@ var commentRoutes    = require("./routes/comments"),
 
 //seedDB();
 //mongoose.connect("mongodb://localhost/Yelp_camp",{useNewUrlParser:true,useUnifiedTopology:true});
-mongoose.connect("mongodb+srv://Thushar:goodbrother@cluster0.yizu1.mongodb.net/yelpcamp?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true});
+//console.log(process.env.DATABASEURL);
+mongoose.connect(process.env.DATABASEURL,{useNewUrlParser:true,useUnifiedTopology:true});
 
 Campground = require("./models/campground");
 Comment = require("./models/comment")
