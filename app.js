@@ -13,7 +13,10 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/camping"),
     indexRoutes      = require("./routes/auth")
 //seedDB();
-mongoose.connect("mongodb://localhost/Yelp_camp",{useNewUrlParser:true,useUnifiedTopology:true});
+//mongoose.connect("mongodb://localhost/Yelp_camp",{useNewUrlParser:true,useUnifiedTopology:true});
+mongoose.connect("mongodb+srv://cluster0-yizu1.mongodb.net/yelpcamp",{useNewUrlParser:true,useUnifiedTopology:true});
+//mongo "mongodb+srv://cluster0-yizu1.mongodb.net/<dbname>"
+
 Campground = require("./models/campground");
 Comment = require("./models/comment")
 
