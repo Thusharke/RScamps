@@ -1,8 +1,33 @@
 <%- include("./partials/header")%>
-<h1>Welcome to the Login page</h1>
+
+
+<div class="container" style="width:30%;">
+	<form action="/login" method="POST">
+		  <div class="form-group">
+			<h1>Login In</h1>
+		  </div>
+		  <!-- username -->	
+		  <div class="form-group">
+			<label for="exampleInputEmail1">Username</label>
+			<input type="text" name="username"  class="form-control" id="exampleInputPassword1" placeholder="Username">
+		  </div>
+		  <!-- password -->
+		  <div class="form-group">
+			<label for="exampleInputEmail1">Password</label>
+			<input type="password" name="password"  class="form-control" id="exampleInputPassword1" placeholder="Password">
+		  </div>
+		  <!-- submit button -->
+		  <div class="form-group">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		  </div>
+		  <p><a href="/camping">Go Back</a></p>
+	</form>
+</div>
+
+<!-- <h1>Welcome to the Login page</h1>
 <form action="/login" method="POST">
 	<input type="text" name="username" placeholder="username">
 	<input type="password" name="password" placeholder="password">
 	<input type="submit">
-</form>
+</form> -->
 <%- include("./partials/footer")%>

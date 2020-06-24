@@ -2,6 +2,7 @@ var mongoose = require("mongoose");
 var Campground = require('./models/campground');
 var Comment = require('./models/comment');
 
+//Sample Data for testing
 var data = [
 	{
 		Campname : "lake lakey",
@@ -10,7 +11,7 @@ var data = [
 	},
 	{
 		Campname : "Glacier camp",
-		image : "https://globalgrasshopper.com/wp-content/uploads/2012/03/Top-10-most-beautiful-places-to-camp-in-europe-1000x656.jpg",
+		image : "https://globalgrasshopper.com/wp-content/uploads/2012/03/Top-10-most-beautiful-places-to-camp-in-europe-	1000x656.jpg",
 		description : "blah blah blah"
 	},
 	{
@@ -25,12 +26,14 @@ var data = [
 	}
 ]
 
-
+//For removing all campgrounds
 function seedDB(){
 	Campground.deleteMany({},function(err){
 		if(err)
 			console.log(err);
 		else{
+			//Can be un-commented to add sample campgrounds with no associated comments
+			
 			/*console.log("All campgrounds removed succesfully!!");
 			data.forEach(function(camp){
 				Campground.create(camp,function(err,savedCamp){
@@ -45,4 +48,5 @@ function seedDB(){
 	})
 }
 
+//Return value
 module.exports = seedDB;

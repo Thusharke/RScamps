@@ -1,18 +1,23 @@
 <%- include("../partials/header")%>
 
-
 <div class="container" style="width:30%;">
 <form action ="/campground/<%= camp_id %>/comment/<%= comment._id %>?_method=PUT" method="POST">
+  <!-- Heading -->
+  <div class="form-group">
+	<h1>Edit Comment</h1>
+  </div>
+  <!-- Edited Comment-content -->
   <div class="form-group">
     <label for="exampleInputEmail1">Text</label>
    <input tpye="text" name="comment[Text]"  class="form-control" id="exampleInputPassword1" value="<%= comment.Text %>">
   </div>
+  <!-- Submit button -->
 	<div class="form-group">
   <button type="submit" class="btn btn-primary">Submit</button>
 	</div>
+   <!-- Link to index page -->
 	<p><a href="/camping">Go Back</a></p>
 </form>
-
-
+</div>
 
 <%- include("../partials/footer")%>

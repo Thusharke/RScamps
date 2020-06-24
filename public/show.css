@@ -1,32 +1,36 @@
-.thumbnail>img{
-	margin : 0;
-	width : 100%;
-}
-.thumbnail{
-	padding: 0;
-	border: 3px solid #c1c7c3;
-}
-body{
-	background-color : #d9dedb;
-}
-h4{
-	margin: 0px;
-}
-.container{
-	margin-top: 30px;
-}
-strong{
-	font-size : 20px;
-}
-.special{
-	padding-left:5px;
-}
-.delete-form{
-	display : inline;
-}
-#alert{
-	margin-top: 20px;
-}
-.message{
-	margin : 0;
-}
+
+/* All Pages */
+	/* background color  */
+	body{
+		background-color : #d9dedb;
+	}
+	/* alert messages */
+	#alert{
+		margin-top: 2rem ;
+		margin-bottom: 0 ;
+	}
+/* All Pages */
+
+/* Show Page */
+	/* campgrund image settings */
+	.thumbnail>img{
+		margin : 0;
+		width : 100%;
+	}
+	.thumbnail{
+		padding: 0;
+		border: 3px solid #c1c7c3;
+	}
+	/* aligning comment setion with campgrund show page */
+	.special{
+		padding-left:5px;
+	}
+	/* aligning Edit and Delete buttons horizontally */
+	.delete-form{
+		display : inline;
+	}
+	/* for Camp-name and Price*/
+	strong{
+		font-size : 20px;
+	}
+/* Show Page */

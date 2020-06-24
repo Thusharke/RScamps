@@ -1,11 +1,17 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/user');
 var passport = require('passport');
-var middleware = require("../middleware");
+
+//Extracting User model
+var User = require('../models/user');
+
+// ======== Register routes =========
+
+//renders Register form
 router.get("/register",function(req,res){
 	res.render("register");
 })
+//creates new User
 router.post("/register",function(req,res){
 	var newUser = new User({username : req.body.username});
 	User.register(newUser,req.body.password,function(err,user){
@@ -21,22 +27,27 @@ router.post("/register",function(req,res){
 	
 })
 
+// ======== Login routes =========
 
-//login
+//renders Login form
 router.get("/login",function(req,res){
 	res.render("login");
 })
+//If the details authenticate then logs you in.
 router.post("/login",passport.authenticate("local",{
 	successRedirect : "/camping",
 	failureRedirect : "/login"
 }),function(req,res){	
 })
 
-//logout
+// ======== Logout routes =========
+
+//logs you out
 router.get("/logout",function(req,res){
 	req.logout();
 	req.flash("success","LOGGED YOU OUT!!!")
 	res.redirect("/camping");
 })
 
+//return values
 module.exports = router;

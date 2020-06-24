@@ -1,8 +1,26 @@
 <%- include("./partials/header")%>
-<h1>Welcome to the Sing Up page</h1>
-<form action="/register" method="POST">
-	<input type="text" name="username" placeholder="username">
-	<input type="password" name="password" placeholder="password">
-	<input type="submit">
-</form>
+
+<div class="container" style="width:30%;">
+	<form action="/register" method="POST">
+		  <div class="form-group">
+			<h1>Sign Up</h1>
+		  </div>
+		  <!-- username -->	
+		  <div class="form-group">
+			<label for="exampleInputEmail1">Username</label>
+			<input type="text" name="username"  class="form-control" id="exampleInputPassword1" placeholder="Username">
+		  </div>
+		  <!-- password -->
+		  <div class="form-group">
+			<label for="exampleInputEmail1">Password</label>
+			<input type="password" name="password"  class="form-control" id="exampleInputPassword1" placeholder="Password">
+		  </div>
+		  <!-- submit button -->
+		  <div class="form-group">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		  </div>
+		  <p><a href="/camping">Go Back</a></p>
+	</form>
+</div>
+
 <%- include("./partials/footer")%>

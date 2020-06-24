@@ -1,16 +1,20 @@
 <%- include("../partials/header")%>
+
 <div class="container">
+	
+	<!-- Jumbotron -->
 	<div class="jumbotron">
 		<div class="container">
-		<h1><i class="fas fa-campground"></i> Popular Camping Grounds</h1>
-		<p>These are the some of the best camping sites around the world.</p>
-		<p><a class="btn btn-primary btn-lg" href="/camping/new" role="button">Add new campgrounds</a></p>
+		<h1><i class="fas fa-campground"></i> Trending Campgrounds</h1>
+		<p>These are the some of the best campgrounds around the globe.</p>
+		<p><a class="btn btn-primary btn-lg" href="/camping/new" role="button">Add New Campgrounds</a></p>
 		</div>
 	</div>
 	
+	<!-- Displaying Campgrounds -->
 	<div class="row text-center" style="display:flex ; flex-wrap:wrap">
 		<% camps.forEach(function(camp){ %> 
-			<div class="col-md-3 col-sm-12">
+			<div class="col-md-3 col-sm-6">
 				<div class="thumbnail">
 					<img src="<%= camp.image%>" height="500" width="700">
 					<div class="caption">
@@ -25,4 +29,5 @@
 	</div>
 	
 </div>
+
 <%- include("../partials/footer")%>
