@@ -15,7 +15,6 @@ var commentRoutes    = require("./routes/comments"),
 
 //seedDB();
 mongoose.connect(process.env.DATABASEURL,{useNewUrlParser:true,useUnifiedTopology:true});
-
 Campground = require("./models/campground");
 Comment = require("./models/comment")
 
