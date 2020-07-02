@@ -35,6 +35,7 @@ router.post("/camping",middleware.isLoggedIn,function(req,res){
 	Campground.create({
 	Campname: req.body.campName,
 	image: req.body.campURL,
+	price : req.body.campCost,
 	author : {id : req.user._id , username : req.user.username},
 	description : req.body.campDesc	
 	},function(err,camp){
